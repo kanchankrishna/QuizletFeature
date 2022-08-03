@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Submit a Review of this App!</title>
+    <link rel="stylesheet" href="/static/reviews.css" />
+</head>
+
+<style>
+    input[type="submit"] {
+        background-color: yellow;
+        border: green;
+        color: black;
+        font-size: large;
+        padding: 16px 32px;
+        text-decoration: none;
+        margin: 4px 2px;
+        cursor: pointer;
+    }
+
+    select {
+        width: 150px;
+        padding: 5px 35px 5px 5px;
+        font-size: 16px;
+        border: 1px solid #ccc;
+        height: 34px;
+    }
+
+    input[type="text"] {
+        width: 200px;
+        padding: 12px 20px;
+        height: 34px;
+        box-sizing: border-box;
+    }
+
+    div.container {
+        padding: 20px;
+    }
+</style>
+
+<style>
+    div {
+        background-color: lightgrey;
+        width: 1000px;
+        font-size: x-large;
+        border: 15px solid green;
+        padding: 20px;
+        margin: 20px;
+        box-align: center;
+    }
+</style>
+
+<body style="background-color: lightgreen;">
+    <h1>Customer Reviews</h1>
+    <div>
+        It is so easy to keep track of my proficiency level.
+    </div>
+    <div>
+        It is really easy to use. 
+    </div>
+    <div>
+        I was able to study better. 
+    </div>
+
+
+
+    <!-- 
+    <p style="color: black; font-size: 20px;">
+        Bryce Janson (International Student): This app is so great because I am easily able to make friends at Quarry Lane. This made my transition to an American high school with new culture very smooth. 
+    </p>
+    <p style="color: black; font-size: 20px;">
+        Tom Stewart (Domestic Student): This app is so user-friendly and innovative. I felt very welcomed by the Quarry Lane community once I had arrived because I had already connected with members of the school who have similar interests as me. 
+    </p>
+    <p style="color: black; font-size: 20px;">
+        Sarah Parks (Domestic Student): This app pushes me to make more connections with other people.
+    </p>
+-->
+    <div class="container">
+        <form method="POST" name="contact_form" action="/savereviews">
+            <!--  <input name="theuserreview" placeholder="theuserreview" type="text" /> -->
+            <textarea name="theuserreview" placeholder="Your Review" cols="50" rows="19"></textarea>
+    </div>
+    </br>
+    <input type="submit" value="Submit" />
+    </div>
+    </form>
+    </div>
+    {% with messages = get_flashed_messages() %} {% if messages %} {% for
+    message in messages %}
+    <h2>
+        {{ message }}
+    </h2>
+    {% endfor %} {% endif %} {% endwith %}
+
+    <h2><a href="/">Go back to home page</a></h2>
+    <!-- 
+    <form action="/action_page.php" target="_blank">
+      <label for="review">Enter your review:</label><br />
+      <input type="text" id="review" name="review" value="" /><br />
+      <input type="submit" value="Submit Review" />
+    </form>
+
+    <div style="width: 100%; height: 400px;">
+      <img src="/static/betterreview.jpg" alt="Leave a Review" />
+    </div>
+  -->
+</body>
+
+</html>
+
+<!-- style="float: left; width: 50%; height: 100%; object-fit: cover;" -->

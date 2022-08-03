@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Your Study Set Here</title>
+</head>
+<body>
+    <!DOCTYPE html>
+    <html>
+    <title>Your Current Study Set</title>
+    <!-- <link rel="stylesheet" href="/static/list.css" /> -->
+    
+    <body>
+        <h1> Current Study Set </h1>
+        <style>
+            table {
+                font-family: arial, sans-serif;
+                border-collapse: collapse;
+                width: 100%;
+            }
+    
+            td,
+            th {
+                border: 1px solid darkgreen;
+                text-align: left;
+                padding: 8px;
+                background: lightyellow;
+            }
+    
+            tr:nth-child(even) {
+                background-color: lightsteelblue;
+            }
+        </style>
+        <br />
+        <br />
+        <table border="1">
+    
+            <th>Term</th>
+            <th>Definition</th>
+    
+            </thead>
+    
+            {% for row in rows %}
+            <tr>
+                <td>{{row["term"]}}</td>
+                <td>{{row["definition"]}}</td>
+            </tr>
+            {% endfor %}
+        </table>
+        </br>
+        </br>
+        <h2><a href="/">Go back to home page</a></h2>
+    
+    </body>
+    
+    </html>
+
+</body>
+</html>

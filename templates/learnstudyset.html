@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Learn the Study Set</title>
+  </head>
+  <style>
+    select {
+      width: 280px;
+      padding: 5px 35px 5px 5px;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      height: 34px;
+    }
+
+    input[type="text"] {
+      width: 250px;
+      padding: 12px 20px;
+      height: 34px;
+      box-sizing: border-box;
+    }
+
+    label {
+      font-weight: bold;
+      width: 150px;
+      height: 60px;
+      font-size: 20px;
+    }
+    .header {
+      padding: 20px;
+      text-align: center;
+      background: lightgreen;
+      color: black;
+    }
+
+    /* Increase the font size of the h1 element */
+    .header h1,
+    h2 {
+      font-size: 30px;
+    }
+    input[type="text"],
+    [type="password"] {
+      width: 250px;
+      padding: 12px 20px;
+      margin: 8px 0;
+      display: block;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+    }
+
+    input[type="submit"] {
+      background-color: lightskyblue;
+      border: green;
+      color: black;
+      font-size: large;
+      padding: 16px 32px;
+      text-decoration: none;
+      margin: 4px 2px;
+      cursor: pointer;
+    }
+
+    input[type="submit"]:hover {
+      background-color: #45a049;
+    }
+
+    body {
+      font-family: Arial;
+    }
+  </style>
+  <div class="header">
+    <h1>Welcome to the Quizlet Feature.</h1>
+    <h2><i>Master your vocab terms easily!</i></h2>
+  </div>
+  <body>
+    <br />
+    <br />
+    <form method="POST" name="studyset" action="/afterstudyset">
+      <label for="studyset"
+        >Choose what you want to fill out when completing the study set:</label
+      >
+      <br />
+      <select name="studyset" id="studyset">
+        <option value="term">Term</option>
+        <option value="definition">Definition</option>
+        <!-- let's say that they pick term, so we display the definition-->
+        <!-- page has to display definition, empty form box to enter the term-->
+      </select>
+      <input type="submit" value="Submit" />
+    </form>
+    <!-- commenting the following code out because we are now making an after page deal with it
+     <input type="button" value="Home Page" />
+
+    <label for="thefirstterm">Your Answer for the First Term</label><br />
+    <input type="text" id="thefirstterm" name="thefirstterm" />
+    <button id="myBtn" onclick="javascript:alert('You have pressed enter!')">
+        Answer
+      </button> 
+
+    <h2>{{ msg }}</h2>
+    <h2>{{ response_message }}</h2>
+
+    <br />
+    <br />
+    -->
+    <!-- <script>
+      var input = document.getElementById("thefirstterm");
+      input.addEventListener("keyup", function (event) {
+        if (event.keyCode === 13) {
+          event.preventDefault();
+          document.getElementById("myBtn").click();
+        }
+      });
+    </script> -->
+  </body>
+</html>

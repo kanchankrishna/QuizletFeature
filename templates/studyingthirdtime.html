@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Second Time Studying a Term</title>
+  </head>
+  <style>
+    body {
+      font-family: Arial;
+    }
+  
+    /* Style the header */
+    .header {
+      padding: 20px;
+      text-align: center;
+      background: lightgreen;
+      color: black;
+    }
+  
+    /* Increase the font size of the h1 element */
+    .header h1,
+    h2 {
+      font-size: 30px;
+    }
+  
+    input[type="text"],
+    [type="password"] {
+      width: 250px;
+      padding: 12px 20px;
+      margin: 8px 0;
+      display: block;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+    }
+  
+    input[type="submit"] {
+      background-color: lightskyblue;
+      border: green;
+      color: black;
+      font-size: large;
+      padding: 16px 32px;
+      text-decoration: none;
+      margin: 4px 2px;
+      cursor: pointer;
+    }
+  
+    input[type="submit"]:hover {
+      background-color: #45a049;
+    }
+  </style>
+  <div class="header">
+      <h1>Welcome to the Quizlet Feature.</h1>
+    <h2><i>Master your vocab terms easily!</i></h2>
+  </div>
+  <body>
+    <form method="POST" action="/answerthirdtime">
+      <h2>{{ msg }}</h2>
+      <label for="thefirstterm">Please enter your answer here:</label><br />
+      <input type="text" id="thefirstterm" name="thefirstterm" />
+      <input type="submit" value="Answer" />
+      <input type="hidden" name="hiddenfield1" id="hiddenfield1" value={{termordef}}></input>
+      <input type="hidden" name="hiddenfield2" id="hiddenfield2" value="{{thirdterm}}"></input>
+      <input type="hidden" name="hiddenfield3" id="hiddenfield3" value="{{thirddef}}"></input>
+      <input type="hidden" name="hiddenfield4" id="hiddenfield4" value={{starttime}}></input>
+      <input type="hidden" name="hiddenfield5" id="hiddenfield5" value={{confidence_level}}></input>
+      <input type="hidden" name="hiddenfield6" id="hiddenfield6" value={{correct_terms}}></input>
+
+    </form>
+      {% with messages = get_flashed_messages() %} {% if messages %} {% for
+            message in messages %}
+      <h2>{{ message }}</h2>
+      {% endfor %} {% endif %} {% endwith %}
+  </body>
+</html>
